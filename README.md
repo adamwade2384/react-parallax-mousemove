@@ -1,2 +1,3 @@
-# react-parallax-hover
-A layered component for parallax background elements inspired by react-springy-parallax.
+## React Parallax Hover
+
+Inspired by the react-springy-parallax project.
