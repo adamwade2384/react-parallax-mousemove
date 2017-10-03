@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import HoverParallax from './hoverParallax'
 
-class App extends Component {
+class App extends React.Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <HoverParallax>
+        <HoverParallax.Layer xFactor={0.05} yFactor={0.2}>
+          <span>This is the first layer.</span>
+        </HoverParallax.Layer>
+        <HoverParallax.Layer xFactor={0.1} yFactor={0.5}>
+          <span>This is the second layer.</span>
+        </HoverParallax.Layer>
+        <HoverParallax.Layer xFactor={0.5} yFactor={1}>
+          <span>This is the third layer.</span>
+        </HoverParallax.Layer>
+      </HoverParallax>
+    )
   }
 }
 
-export default App;
+export default App

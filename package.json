@@ -1,10 +1,22 @@
 {
   "name": "react-parallax-hover",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Adam Wade",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamwade2384/react-parallax-hover.git"
+  },
+  "keywords": [
+    "react",
+    "parallax",
+    "scroll"
+  ],
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-motion": "^0.5.1",
     "react-scripts": "1.0.14"
   },
   "scripts": {
