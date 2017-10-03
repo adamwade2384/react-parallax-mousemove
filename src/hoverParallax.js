@@ -29,8 +29,8 @@ export default class extends React.Component {
           super(props)
           this.state = {
             finalStyle: {
-              top: spring(0, {stiffness:70, damping:20}),
-              left: spring(200, {stiffness:70, damping:20})
+              top: spring(0, {stiffness:120, damping:20}),
+              left: spring(0, {stiffness:120, damping:20})
             }
           }
         }
@@ -42,12 +42,12 @@ export default class extends React.Component {
         updatePosition = (e) => {
           const xFactor = this.props.xFactor
           const yFactor = this.props.yFactor
-          var getYFromCenter = yFactor * ((e.view.innerWidth / 2) - e.clientY)
-          var getXFromCenter = xFactor * ((e.view.innerHeight / 2) - e.clientX)
+          var getYFromCenter = yFactor * ((e.view.innerHeight / 2) - e.clientY)
+          var getXFromCenter = xFactor * ((e.view.innerWidth / 2) - e.clientX)
           this.setState(prevState => ({
             finalStyle: {
-              top: spring(getYFromCenter, {stiffness:70, damping:20}),
-              left: spring(getXFromCenter, {stiffness:70, damping:20})
+              top: spring(getYFromCenter, {stiffness:120, damping:20}),
+              left: spring(getXFromCenter, {stiffness:120, damping:20})
             }
           }))
         }
