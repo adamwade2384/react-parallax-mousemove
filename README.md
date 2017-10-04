@@ -1,29 +1,12 @@
-# React NPM library starter kit
-
-[![Build Status](https://travis-ci.org/UdiliaInc/create-react-library.svg?branch=master)](https://travis-ci.org/UdiliaInc/create-react-library)
-[![Dependencies](https://img.shields.io/david/udiliaInc/create-react-library.svg)]()
-[![Dev Dependencies](https://img.shields.io/david/dev/udiliaInc/create-react-library.svg)]()
-
-based on Facebook's <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Create react app</a>
-
-## Converted to custom setup
-
-Moved all dependencies to dev dependencies because we don't need extra dependencies for our library after build, but we want all this features while developing one: 
-
-* Compile SCSS to css
-* React, JSX, ES6, and Flow syntax support.
-* Language extras beyond ES6 like the object spread operator.
-* A dev server that lints for common errors.
-* Import CSS and image files directly from JavaScript.
-* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
-* A `build` script to bundle JS, CSS, and images for production.
+# React Parallax Mousemove
+A simple react wrapper component which takes an arbitrary number of children as layers. Layers are affected by the position of the mouse pointer in relation to the center of the window. This project was inspired by react-springy-parallax.
 
 ## Getting Started
 
 Clone repo
 
 ````
-git clone https://github.com/udiliaInc/create-react-library.git
+git clone https://github.com/adamwade2384/react-parallax-mousemove.git
 ````
 
 Install dependencies
@@ -37,28 +20,42 @@ Start development server
 Runs the demo app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Library files
-
-All library files are located inside `src/lib`  
-
 ## Demo app
 
 Is located inside `src/demo` directory, here you can test your library while developing
 
-## Testing
+## Usage
 
-`npm run test` or `yarn run test`
+`import ParallaxMousemove from 'react-parallax-mousemove'`
 
-## Build library
+The library provides you with two (2) components - A container component and layer component(s). The container component ParallaxMousemove takes the ParallaxMousemove.Layer component as children. 
 
-`npm run build` or `yarn run build`
+  ```
+  <ParallaxMousemove>
+    <ParallaxMousemove.Layer></ParallaxMousemove.Layer>
+    <ParallaxMousemove.Layer></ParallaxMousemove.Layer>
+  </ParallaxMousemove>
+  ```
 
-Produces production version of library under the `build` folder.
+The props for each component is as follows: 
 
-## Publish library
+### Container Component
 
-`npm publish`
+| prop | type | required  |
+| ------ | ------ | -----: |
+|  containerStyle  |  Obj  |   optional  |
+|  fullHeight  |  Bool  |   optional  |
 
-## Example library built with this starter kit
+### Layer Component
 
-https://github.com/UdiliaInc/react-under-construction
+| prop | type | required  |
+| ------ | ------ | -----: |
+|  config  |  Obj  |   required  |
+
+### Layer Configuration Options
+
+| option | type | description  |
+| ------ | ------ | ----- |
+|  xFactor  |  Int  |   A percentage of the mousemove distance from the center of the screen on the x axis  |
+|  yFactor  |  Int  |   A percentage of the mousemove distance from the center of the screen on the y axis  |
+|  springSettings  |  Obj  |   The spring configuration settings for react-motion  |
