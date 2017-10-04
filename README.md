@@ -26,6 +26,12 @@ Is located inside `src/demo` directory, here you can test your library while dev
 
 ## Usage
 
+In the command line: 
+
+`npm install react-parallax-mousemove --save`
+
+To use in a component:
+
 `import ParallaxMousemove from 'react-parallax-mousemove'`
 
 The library provides you with two (2) components - A container component and layer component(s). The container component ParallaxMousemove takes the ParallaxMousemove.Layer component as children. 
