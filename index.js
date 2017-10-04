@@ -10,11 +10,6 @@ export default class extends React.Component {
 
   componentDidMount() {
     this.setState({ isReady:true })
-    window.addEventListener('resize', this.adjustContainer, false)
-  }
-
-  adjustContainer = (e) => {
-    this.setState({ height: window.innerHeight })
   }
 
   render() {
@@ -23,14 +18,21 @@ export default class extends React.Component {
     if (this.state.isReady) {
 
       if( this.props.fullHeight ) {
-        this.props.containerStyle.outter.height = window.innerHeight
+        // override the height style if fullHeight is truthy
+        this.props.containerStyle.height = window.innerHeight
+      }
+
+      const commonStyle = {
+        backgroundImage: `url(${this.props.bgImgSrc})` || '',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }
 
       return (
           <div
             ref="container"
-            style={ this.props.containerStyle.outter }>
-            <div ref="inner-container" style={ this.props.containerStyle.inner }>
+            style={ commonStyle }>
+            <div ref="inner-container" style={ this.props.containerStyle }>
               { children }
             </div>
           </div>
@@ -45,11 +47,10 @@ export default class extends React.Component {
         constructor(props) {
           super(props)
           this.resizeTimeout = false
-          this.config = this.props.config
           this.state = {
             toStyle: {
               top: 0,
-              left: 0,
+              left: 0
             }
           }
         }
@@ -81,8 +82,7 @@ export default class extends React.Component {
 
         render() {
 
-          const { children } = this.props
-          let config = this.props.config
+          const { children } = this.props;
 
           const fromStyle = {
             top: 0,
@@ -90,8 +90,7 @@ export default class extends React.Component {
           }
 
           const commonStyle = {
-            position: 'relative',
-            marginTop: '-60px'
+            position: 'absolute'
           }
 
           return (
