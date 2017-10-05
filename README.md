@@ -9,6 +9,12 @@ Clone repo
 git clone https://github.com/adamwade2384/react-parallax-mousemove.git
 ````
 
+Or add npm package
+
+```
+npm install react-parallax-mousemove --save
+```
+
 Install dependencies
 
 `npm install` or `yarn install`
@@ -23,6 +29,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Demo app
 
 Is located inside `src/demo` directory, here you can test your library while developing
+
+## Live demo
+
+http://react-parallax-mousemove.surge.sh/
 
 ## Usage
 
