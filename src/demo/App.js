@@ -10,7 +10,6 @@ class App extends React.Component {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         width:'100%',
-        height:500,
         position: 'relative',
         overflow: 'hidden'
       },
@@ -37,9 +36,8 @@ class App extends React.Component {
       paragraph: {
         fontFamily: 'Roboto',
         fontSize: '20px',
-        color: '#247B8A',
+        color: 'white',
         letterSpacing: '0.62px',
-        textShadow: '0px 0px 2px #43AABA',
         lineHeight: '30px',
         fontWeight: 300
       },
@@ -54,50 +52,98 @@ class App extends React.Component {
         marginTop: '40px',
         fontWeight: 100,
         display: 'block'
+      },
+      infoLayerStyle: {
+        position: 'relative',
+        marginTop: '-60px'
+      },
+      bgLayerStyle: {
+        position: 'absolute',
+        height: '100%',
+        transform: 'translate(-15%, 17%)',
       }
     }
 
     return (
-      <ParallaxMousemove containerStyle={style} fullHeight={true}>
-        <ParallaxMousemove.Layer config={{
-            xFactor: 0.2,
-            yFactor: 0,
-            springSettings: {
-              stiffness: 50,
-              damping: 30
-            }
-          }}>
-          {/* Add any markup here as children */}
-          <img src={require('./imgs/bg1.png')} alt="Parallax hover layer 1"></img>
-        </ParallaxMousemove.Layer>
-        <ParallaxMousemove.Layer config={{
-            xFactor: 0.3,
-            yFactor: 0,
-            springSettings: {
-              stiffness: 50,
-              damping: 30
-            }
-          }}>
-          {/* Add any markup here as children */}
-          <img src={require('./imgs/bg2.png')} alt="Parallax hover layer 2"></img>
-        </ParallaxMousemove.Layer>
-        <ParallaxMousemove.Layer config={{
-            xFactor: 0.4,
-            yFactor: 0,
-            springSettings: {
-              stiffness: 50,
-              damping: 30
-            }
-          }}>
-          {/* This .Layer will be on top or 'closer' than the previous */}
-          <img src={require('./imgs/bg3.png')} alt="Parallax hover layer 3"></img>
-        </ParallaxMousemove.Layer>
-
-        <h1 style={style.header}>REACT-PARALLAX-MOUSEMOVE</h1>
-        <p style={style.paragraph}>A simple react component for creating a parallax effect connected to the mousemove event.</p>
-        <a href="https://www.npmjs.com/package/react-parallax-mousemove" style={style.button}>npm install react-parallax-mousemove --save</a>
-
-      </ParallaxMousemove>
+      <div>
+        <ParallaxMousemove containerStyle={style.outter} fullHeight={true}>
+          <ParallaxMousemove.Layer layerStyle={style.bgLayerStyle} config={{
+              xFactor: 0.05,
+              yFactor: 0,
+              springSettings: {
+                stiffness: 50,
+                damping: 30
+              }
+            }}>
+            <img src={require('./imgs/bg4.png')} alt="Parallax Layer"></img>
+          </ParallaxMousemove.Layer>
+          <ParallaxMousemove.Layer layerStyle={style.bgLayerStyle} config={{
+              xFactor: 0.15,
+              yFactor: 0,
+              springSettings: {
+                stiffness: 50,
+                damping: 30
+              }
+            }}>
+            <img src={require('./imgs/bg5.png')} alt="Parallax Layer"></img>
+          </ParallaxMousemove.Layer>
+          <ParallaxMousemove.Layer layerStyle={style.bgLayerStyle} config={{
+              xFactor: 0.25,
+              yFactor: 0.025,
+              springSettings: {
+                stiffness: 50,
+                damping: 30
+              }
+            }}>
+            <img src={require('./imgs/bg7.png')} alt="Parallax Layer"></img>
+          </ParallaxMousemove.Layer>
+          <ParallaxMousemove.Layer layerStyle={style.bgLayerStyle} config={{
+              xFactor: 0.4,
+              yFactor: 0.05,
+              springSettings: {
+                stiffness: 50,
+                damping: 30
+              }
+            }}>
+            <img src={require('./imgs/bg6.png')} alt="Parallax Layer"></img>
+          </ParallaxMousemove.Layer>
+          <div style={style.inner}>
+            <ParallaxMousemove.Layer layerStyle={style.infoLayerStyle} config={{
+                xFactor: 0.2,
+                yFactor: 0,
+                springSettings: {
+                  stiffness: 50,
+                  damping: 30
+                }
+              }}>
+              <img src={require('./imgs/bg1.png')} alt="Parallax Layer"></img>
+            </ParallaxMousemove.Layer>
+            <ParallaxMousemove.Layer layerStyle={style.infoLayerStyle} config={{
+                xFactor: 0.3,
+                yFactor: 0,
+                springSettings: {
+                  stiffness: 50,
+                  damping: 30
+                }
+              }}>
+              <img src={require('./imgs/bg2.png')} alt="Parallax Layer"></img>
+            </ParallaxMousemove.Layer>
+            <ParallaxMousemove.Layer layerStyle={style.infoLayerStyle} config={{
+                xFactor: 0.4,
+                yFactor: 0,
+                springSettings: {
+                  stiffness: 50,
+                  damping: 30
+                }
+              }}>
+              <img src={require('./imgs/bg3.png')} alt="Parallax Layer"></img>
+            </ParallaxMousemove.Layer>
+            <h1 style={style.header}>REACT-PARALLAX-MOUSEMOVE</h1>
+            <p style={style.paragraph}>A simple react component for creating a parallax effect connected to the mousemove event.</p>
+            <a href="https://www.npmjs.com/package/react-parallax-mousemove" style={style.button}>npm install react-parallax-mousemove --save</a>
+          </div>
+        </ParallaxMousemove>
+      </div>
     )
   }
 }

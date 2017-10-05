@@ -58,4 +58,11 @@ The props for each component is as follows:
 | ------ | ------ | ----- |
 |  xFactor  |  Int  |   A percentage of the mousemove distance from the center of the screen on the x axis  |
 |  yFactor  |  Int  |   A percentage of the mousemove distance from the center of the screen on the y axis  |
-|  springSettings  |  Obj  |   The spring configuration settings for react-motion  |
+|  springSettings  |  Obj  |   The spring configuration settings for react-motion.  |
+
+### Spring Settings object
+
+| option | type | description  |
+| ------ | ------ | ----- |
+|  stiffness  |  Int  |   The response and speed of layers in relation to mouse movements  |
+|  damping  |  Int  |  The spring and rebound of layers in relation to mouse movements |
