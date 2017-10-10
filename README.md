@@ -41,9 +41,15 @@ http://react-parallax-mousemove.surge.sh/
 The library provides you with two (2) components - A container component and layer component(s). The container component ParallaxMousemove takes the ParallaxMousemove.Layer component as children.
 
   ```
-  <ParallaxMousemove>
-    <ParallaxMousemove.Layer></ParallaxMousemove.Layer>
-    <ParallaxMousemove.Layer></ParallaxMousemove.Layer>
+  <ParallaxMousemove containerStyle={type:Obj} fullHeight={type:Bool}>
+    <ParallaxMousemove.Layer layerStyle={type:Obj} config={{
+        xFactor: type: Float,
+        yFactor: type: Float,
+        springSettings: {
+          stiffness: type: Int,
+          damping: type: Int
+        }
+      }}>
   </ParallaxMousemove>
   ```
 
