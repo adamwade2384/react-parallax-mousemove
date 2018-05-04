@@ -69,7 +69,7 @@ export default class extends React.Component {
           const { children } = this.props
 
           return (
-                <Motion defaultStyle={this.props.layerStyle} style={this.state.toStyle}>{motionStyle =>
+                <Motion style={this.state.toStyle}>{motionStyle =>
                   <div ref="layer" style={{...motionStyle, ...this.props.layerStyle}}>
                     { children }
                   </div>
